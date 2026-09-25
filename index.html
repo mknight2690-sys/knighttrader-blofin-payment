@@ -460,6 +460,58 @@
             text-decoration: underline;
         }
 
+        /* 5-minute cron pitch */
+        .cron-pitch {
+            max-width: 900px;
+            margin: 1rem auto 3rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(168, 36, 227, 0.12) 0%, transparent 60%),
+                var(--bg-glass);
+            position: relative;
+            overflow: hidden;
+        }
+        .cron-pitch::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-cyan), var(--primary));
+        }
+        .cron-pitch .pitch-headline {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cron-pitch .pitch-sub {
+            font-size: 1.15rem;
+            color: var(--text);
+            max-width: 720px;
+            margin: 0 auto 1rem;
+        }
+        .cron-pitch .pitch-sub strong {
+            color: var(--accent-cyan);
+        }
+        .cron-pitch .pitch-tag {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--accent-green);
+            border-radius: 2rem;
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
@@ -467,6 +519,9 @@
             .nav-links { display: none; }
             .stripe-cta-btn { display: block; margin: 0.5rem auto; }
             .steps-container .step { flex-direction: column; text-align: center; }
+            .cron-pitch { padding: 2rem 1.25rem; }
+            .cron-pitch .pitch-headline { font-size: 1.5rem; }
+            .cron-pitch .pitch-sub { font-size: 1rem; }
         }
     </style>
 </head>
@@ -486,7 +541,7 @@
     <section class="hero">
         <div class="container">
             <h1>Local desktop app · No trading experience required</h1>
-            <p class="lead">The AI agent trades your BloFin account — 24/7, on a preset prompt designed to get out-of-the-box profitability.</p>
+            <p class="lead">The AI agent trades your BloFin account — 24/7, on a preset prompt designed to get out-of-the-box profitability. It wakes up every 5 minutes, forever.</p>
 
             <div class="warning-box">
                 <strong>⚠ Risk Warning</strong>
@@ -511,6 +566,12 @@
         <div class="trust-item">✓ <strong>No subscription</strong> — one-time payment</div>
         <div class="trust-item">✓ <strong>Instant access</strong> after payment</div>
     </div>
+
+    <section class="cron-pitch container">
+        <div class="pitch-headline">Your AI agent wakes up every 5 minutes to trade your account. Forever.</div>
+        <div class="pitch-sub">There's never more than <strong>5 minutes</strong> of time the markets aren't being exploited to your advantage. <strong>Ever.</strong></div>
+        <div class="pitch-tag">Autonomous · 24/7 · 5-minute cadence</div>
+    </section>
 
     <section id="how-it-works" class="section">
         <h2 class="section-title">How it <span class="accent">works</span></h2>
@@ -539,8 +600,8 @@
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <h3>The assistant runs on a schedule</h3>
-                    <p>Every few minutes the assistant checks your account and the market, asks its AI model whether to act, and either does nothing or places a small order.</p>
+                    <h3>The assistant runs on a 5-minute schedule</h3>
+                    <p>Every 5 minutes the assistant checks your account and the market, asks its AI model whether to act, and either does nothing or places a small order. There's never more than 5 minutes where the markets aren't being exploited to your advantage.</p>
                 </div>
             </div>
             <div class="step">
@@ -612,6 +673,7 @@
                 <li><span class="check">✓</span> Full KnightTrader BloFin desktop app</li>
                 <li><span class="check">✓</span> Signed installer (.exe / .dmg)</li>
                 <li><span class="check">✓</span> Beginner How-To tab</li>
+                <li><span class="check">✓</span> 5-minute autonomous cron cadence — 24/7, forever</li>
                 <li><span class="check">✓</span> One-time payment — no subscription</li>
             </ul>
             <div style="margin-top: 2rem;">
