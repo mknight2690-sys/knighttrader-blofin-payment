@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KnightTrader BloFin - AI Agent Trading System</title>
-    <meta name="description" content="AI-powered trading agent for BloFin perpetual futures. Local desktop app, no trading experience required. $19 one-time, plus a one-time ~$5 Nous Portal credit top-up (paid to Nous) to create your API key. The app auto-selects free AI models.">
+    <meta name="description" content="AI-powered trading agent for BloFin perpetual futures. Local desktop app, no trading experience required. $29 one-time, plus a one-time ~$5 Nous Portal credit top-up (paid to Nous) to create your API key. The app auto-selects free AI models.">
     <meta name="theme-color" content="#0a0a0f">
-    <script src="https://js.stripe.com/v3/"></script>
+    <meta property="og:title" content="KnightTrader BloFin — AI Agent Trading System">
+    <meta property="og:description" content="Local desktop BloFin trading bot. $29 one-time. Beginner How-To included. Keys stay on your PC.">
+    <meta property="og:url" content="https://mknight2690-sys.github.io/knighttrader-blofin-payment/">
     <style>
         :root {
             --primary: #a824e3;
@@ -548,11 +550,11 @@
                 <p>You can lose money. Only fund your BloFin account with money you can afford to lose in full.</p>
             </div>
 
-            <div class="price-display">$19</div>
+            <div class="price-display"><span data-kt-price>$29</span></div>
             <p class="price-sub">one-time payment (plus one-time ~$5 Nous Portal credit top-up, paid to Nous, to create your API key)</p>
 
-            <a href="https://buy.stripe.com/dRmcN69QG4C0b55bkoe3e0c" class="stripe-cta-btn">
-                Pay $19 — Get Instant Access
+            <a href="#" class="stripe-cta-btn" data-kt-stripe>
+                Pay <span data-kt-price>$29</span> — Get Instant Access
             </a>
 
             <div class="local-first">
@@ -615,7 +617,7 @@
     </section>
 
     <section id="what-you-get" class="section section-alt">
-        <h2 class="section-title">What you <span class="accent">get — for $19 flat</span></h2>
+        <h2 class="section-title">What you <span class="accent">get — for <span data-kt-price>$29</span> flat</span></h2>
         <div class="features-grid">
             <div class="feature-card">
                 <h3>AI Agent Trading System</h3>
@@ -635,29 +637,29 @@
             <thead>
                 <tr>
                     <th>Feature</th>
-                    <th>COST - $19 ONE-TIME</th>
+                    <th>COST - <span data-kt-price>$29</span> ONE-TIME</th>
                     <th>COST - CUSTOM DEVELOPMENT</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Basic single-exchange bot</td>
-                    <td class="value-cell">$19</td>
+                    <td class="value-cell"><span data-kt-price>$29</span></td>
                     <td>$5,000 - $12,000</td>
                 </tr>
                 <tr>
                     <td>Bot with dashboard and risk controls</td>
-                    <td class="value-cell">$19</td>
+                    <td class="value-cell"><span data-kt-price>$29</span></td>
                     <td>$15,000 - $50,000</td>
                 </tr>
                 <tr>
                     <td>Custom AI trading platform</td>
-                    <td class="value-cell">$19</td>
+                    <td class="value-cell"><span data-kt-price>$29</span></td>
                     <td>$70,000 - $150,000+</td>
                 </tr>
                 <tr>
                     <td>Ongoing maintenance</td>
-                    <td class="cost-cell">$19 (one-time)</td>
+                    <td class="cost-cell"><span data-kt-price>$29</span> (one-time)</td>
                     <td>15-20% per year</td>
                 </tr>
             </tbody>
@@ -667,7 +669,7 @@
     <section id="pricing" class="section">
         <div class="pricing-card">
             <div class="pricing-badge">One-time payment</div>
-            <div class="price-wrapper"><span class="price-amount">$19</span></div>
+            <div class="price-wrapper"><span class="price-amount"><span data-kt-price>$29</span></span></div>
             <div class="price-label">Plus one-time ~$5 Nous Portal credit top-up (paid to Nous)</div>
             <ul class="pricing-features">
                 <li><span class="check">✓</span> Full KnightTrader BloFin desktop app</li>
@@ -678,7 +680,7 @@
                 <li><span class="check">✓</span> One-time payment — no KnightTrader subscription</li>
             </ul>
             <div style="margin-top: 2rem;">
-                <a href="https://buy.stripe.com/dRmcN69QG4C0b55bkoe3e0c" class="stripe-cta-btn">
+                <a href="#" class="stripe-cta-btn" data-kt-stripe>
                     Pay Now — Redirect to Download
                 </a>
             </div>
@@ -712,27 +714,20 @@
     </section>
 
     <footer>
-        <p>KnightTrader BloFin — local-first trading assistant. $19 one-time, plus a one-time ~$5 Nous Portal credit top-up (paid to Nous) to create your API key.</p>
+        <p>KnightTrader BloFin — local-first trading assistant. <span data-kt-price>$29</span> one-time, plus a one-time ~$5 Nous Portal credit top-up (paid to Nous) to create your API key.</p>
         <p><a href="https://github.com/mknight2690-sys/KnightTrader-BloFin">Source on GitHub</a></p>
     </footer>
 
+    <script src="config.js"></script>
+    <script src="analytics.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
+                    if (this.classList.contains('stripe-cta-btn')) return;
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) target.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            const stripe = Stripe('pk_live_51TpNoVJKVzQQJJarHg3hBT2FWwLnziiMxSQvcaVP9qmyrn6KNA4IUym3SJYg99XkJZXtJz8uxE4zJLkReO4zMjgB00DCP9YjyD');
-            document.querySelectorAll('a.stripe-cta-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    const url = this.href;
-                    const btnText = this.querySelector('.btn-text');
-                    if (btnText) btnText.textContent = 'Redirecting...';
-                    window.location.href = url;
                 });
             });
         });
