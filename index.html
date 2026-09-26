@@ -168,6 +168,12 @@
             margin-bottom: 2rem;
         }
 
+        .payment-methods-note {
+            margin-top: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
         .stripe-cta-btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary) 0%, #c026d3 100%);
@@ -556,6 +562,7 @@
             <a href="#" class="stripe-cta-btn" data-kt-stripe>
                 Pay <span data-kt-price>$29</span> — Get Instant Access
             </a>
+            <p class="payment-methods-note"><span data-kt-payment-methods>Card, Apple Pay, Cash App, or USDC</span></p>
 
             <div class="local-first">
                 Local-first. Your API keys never leave your PC.
@@ -564,7 +571,7 @@
     </section>
 
     <div class="trust-bar container">
-        <div class="trust-item">✓ <strong>Secure checkout</strong> via Stripe</div>
+        <div class="trust-item">✓ <strong>Card or USDC</strong> checkout via Stripe</div>
         <div class="trust-item">✓ <strong>No subscription</strong> — one-time payment</div>
         <div class="trust-item">✓ <strong>Instant access</strong> after payment</div>
     </div>

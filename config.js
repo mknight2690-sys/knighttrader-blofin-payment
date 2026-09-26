@@ -6,7 +6,10 @@ window.KT_CONFIG = {
   // Create a NEW $29 Payment Link in Stripe Dashboard → update this URL.
   // Set success URL to:
   // https://mknight2690-sys.github.io/knighttrader-blo-site/?purchase=success&utm_source=stripe
-  stripePaymentUrl: 'https://buy.stripe.com/dRmcN69QG4C0b55bkoe3e0c',
+  stripePaymentUrl: 'https://buy.stripe.com/28EaEYaUK8Sg2yzgEIe3e0e',
+  // Card + USDC — crypto shows on same link after Dashboard → Payment methods → Stablecoins and Crypto
+  paymentMethodsLabel: 'Card, Apple Pay, Cash App, or USDC',
+  acceptsCrypto: true,
   landingUrl: 'https://mknight2690-sys.github.io/knighttrader-blo-site/',
   paymentUrl: 'https://mknight2690-sys.github.io/knighttrader-blofin-payment/',
   githubReleases: 'https://github.com/mknight2690-sys/KnightTrader-BloFin/releases/latest',

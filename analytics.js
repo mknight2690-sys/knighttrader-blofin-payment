@@ -93,6 +93,10 @@
     document.querySelectorAll('[data-kt-price-num]').forEach((el) => {
       el.textContent = String(cfg.priceUsd || 29);
     });
+    const methodsLabel = cfg.paymentMethodsLabel || '';
+    document.querySelectorAll('[data-kt-payment-methods]').forEach((el) => {
+      el.textContent = methodsLabel;
+    });
   }
 
   storeUtm();

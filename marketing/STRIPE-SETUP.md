@@ -1,17 +1,22 @@
 # Stripe + download funnel setup ($29)
 
-## 1. Create $29 Payment Link
+## 1. $29 Payment Link (live)
 
-1. [Stripe Dashboard](https://dashboard.stripe.com) → **Payment Links** → **New**
-2. Product: `KnightTrader BloFin — AI Agent Trading System`
-3. Price: **$29.00 USD** — **One time**
-4. After payment → **Redirect to a URL**:
+**Current link:** `https://buy.stripe.com/28EaEYaUK8Sg2yzgEIe3e0e`
+
+Success redirect is already set to:
 
 ```
 https://mknight2690-sys.github.io/knighttrader-blo-site/?purchase=success&utm_source=stripe
 ```
 
-5. Copy the new link (starts with `https://buy.stripe.com/...`)
+To recreate: run `node scripts/create-payment-link.mjs` with `STRIPE_SECRET_KEY` set (see `CRYPTO-PAYMENTS.md`).
+
+## 1b. Enable USDC (crypto)
+
+Dashboard → **Settings** → **Payment methods** → **Stablecoins and Crypto** → request/activate.
+
+See `CRYPTO-PAYMENTS.md` for full steps.
 
 ## 2. Update config on both sites
 
