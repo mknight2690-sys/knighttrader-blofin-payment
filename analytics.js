@@ -70,9 +70,10 @@
 
   function wireStripeButtons() {
     const url = cfg.stripePaymentUrl;
-    if (!url) return;
     document.querySelectorAll('a.stripe-cta-btn, [data-kt-stripe]').forEach((btn) => {
-      btn.href = appendUtm(url);
+      const checkoutUrl = url || btn.getAttribute('href') || '';
+      if (!checkoutUrl || checkoutUrl === '#') return;
+      btn.href = appendUtm(checkoutUrl);
       btn.addEventListener('click', () => {
         if (typeof fbq === 'function') {
           fbq('track', 'InitiateCheckout', {
